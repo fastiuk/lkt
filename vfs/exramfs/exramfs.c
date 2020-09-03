@@ -275,13 +275,13 @@ static struct file_system_type exramfs_fs_type = {
     .fs_flags   = FS_USERNS_MOUNT,
 };
 
-static int __init init_exramfs(void)
+static int init_exramfs(void)
 {
     printk(KERN_INFO "insert exramfs\n");
     return register_filesystem(&exramfs_fs_type);
 }
 
-static void __exit exit_exramfs(void)
+static void exit_exramfs(void)
 {
     printk(KERN_INFO "remove exramfs\n");
     unregister_filesystem(&exramfs_fs_type);
